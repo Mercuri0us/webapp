@@ -1,0 +1,26 @@
+.caroimg {
+    object-fit: cover;
+    object-position: center;
+    height: 50vh;
+    width: 100%;
+    overflow: hidden;
+    /* color:#dddddd */
+}
+
+.des{
+    min-height: 50vh;
+    width: 40vh;
+    background-color:#dddddd;
+}
+
+.card:hover {
+    transition: .5s ease;
+    opacity: 0.5;
+}
+
+.cardimg {
+    height: 20rem;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
