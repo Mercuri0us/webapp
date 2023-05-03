@@ -1,29 +1,28 @@
-import {Routes, Route, useLocation} from 'react-router-dom';
-import {TransitionGroup,  CSSTransition } from 'react-transition-group';
+import {Routes, Route, Link, Navigate} from 'react-router-dom';
 
 import './App.css';
 import './index.css'
 import HomePage from './HomePage';
+import Layout from './Layout';
 
 function App() {
-  const location = useLocation();
 
   return (
-      <TransitionGroup component={null}>
-        <CSSTransition
-          timeout={2000}
-          classNames='fade'
-          key={location.key}
-        >
-          <Routes location={location}>
-            {/* <Route element={<AnimatedLayout/>}> */}
-              <Route path="/" element={<HomePage/>} />
-              <Route path="/second" element={<h2>第二頁</h2>} />
-            {/* </Route> */}
-          </Routes>
-        </CSSTransition>  
-      </TransitionGroup>
+    <Routes>
+      <Route path='WEBAPP/React/build' element={<Layout/>}>
+        <Route path="homepage" element={<HomePage/>} />
+        <Route path="second" element={<Second/>} />
+        <Route path='' element={<Navigate to='homepage'/>}/>
+      </Route>
+      <Route path='/' element={<Navigate to='/WEBAPP/React/build/homepage'/>}/>
+    </Routes>
   );
 }
 
 export default App;
+
+function Second(){
+  return(
+    <Link to='/'>第二頁</Link>
+  );
+}

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {Outlet} from 'react-router-dom';
+import {Outlet, useLocation} from 'react-router-dom';
+import {TransitionGroup,  CSSTransition } from 'react-transition-group';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -12,12 +13,23 @@ import {LinkContainer} from 'react-router-bootstrap';
 import MemberImg from "./member icon.svg"
 
 function Layout() {
+    const location = useLocation();
+    
     return(
-        <>
+        <div>
             <TopNav/>
             <Footer/>
-            <Outlet/>
-        </>
+            <TransitionGroup component={null}>
+                <CSSTransition
+                    timeout={1250}
+                    classNames='fade'
+                    key={location.key}
+                    unmountOnExit
+                >
+                    <Outlet/>
+                </CSSTransition>  
+            </TransitionGroup>
+        </div>
     );
 }
 export default Layout;
@@ -26,19 +38,19 @@ function TopNav(){
     return(
         <Navbar expand="md" variant="light" bg="light" className="m-3 shadow-sm rounded sticky-top">
             <Container className='p-0 mx-5'>
-                <LinkContainer to="/" className='px-5 fs-3'>
+                <LinkContainer to="homepage" className='px-5 fs-3'>
                     <Navbar.Brand>網站名稱</Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className='justify-content-between'>
                     <Nav className="w-50 fs-5">
-                        <LinkContainer to="/">
+                        <LinkContainer to="">
                             <Nav.Link className='px-4 border-start border-end border-secondary'>首頁</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="/">
+                        <LinkContainer to="">
                             <Nav.Link className='px-4 border-start border-end border-secondary'>快速指引</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="/">
+                        <LinkContainer to="">
                             <Nav.Link className='px-4 border-start border-end border-secondary'>經驗分享</Nav.Link>
                         </LinkContainer>
                     </Nav>

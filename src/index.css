@@ -21,7 +21,7 @@ code {
   opacity: 1;
   transform: translate(0, 0);
 
-  transition: all 1250ms ease;
+  transition: all 1250ms ease-in;
 }
 .fade-exit {
   opacity: 1;

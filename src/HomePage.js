@@ -14,7 +14,11 @@ import { LinkContainer } from 'react-router-bootstrap';
 import "./HomePage.css";
 import Placeholder from './placeholder';
 
+import Shetland from "./img/dog-shetland-sheepdog-collie-sheltie-royalty-free-image-491206081-1565123992.jpg";
+import Golden from "./img/golden-retriever-royalty-free-image-506756303-1560962726.jpg"
+import Samoyed from "./img/samoyed-royalty-free-image-1581005065.jpg"
 
+var basename="/WEBAPP/React/build/"
 function HomePage(){
     return(
         <div>
@@ -46,7 +50,7 @@ function Display(){
           <Carousel.Item>
             <img
               className="d-block w-100 caroimg"
-              src={require("./img/dog-shetland-sheepdog-collie-sheltie-royalty-free-image-491206081-1565123992.jpg")}
+              src={Shetland}
               alt="First slide"
             />
             <Carousel.Caption>
@@ -57,7 +61,7 @@ function Display(){
           <Carousel.Item>
             <img
               className="d-block w-100 caroimg"
-              src={require("./img/golden-retriever-royalty-free-image-506756303-1560962726.jpg")}
+              src={Golden}
               alt="Second slide"
             />
             <Carousel.Caption>
@@ -68,7 +72,7 @@ function Display(){
           <Carousel.Item>
             <img
               className="d-block w-100 caroimg"
-              src={require("./img/samoyed-royalty-free-image-1581005065.jpg")}
+              src={Samoyed}
               alt="Third slide"
             />
             <Carousel.Caption>
@@ -90,12 +94,12 @@ function QuickGuide(){
             <Container className='mt-5'>
                 <Row className='px-auto g-3'>
                     <Col sm className='justify-content-center d-flex'>
-                        <LinkContainer to='/second' style={{ width: '18rem' , height:'20rem'}}>
+                        <LinkContainer to={basename+'second'} style={{ width: '18rem' , height:'20rem'}}>
                             <Card className='card position-relative'>
                                 <Card.Img 
                                 className='cardimg'
                                 variant="top" 
-                                src={require("./img/dog-shetland-sheepdog-collie-sheltie-royalty-free-image-491206081-1565123992.jpg")}
+                                src={Shetland}
                                 alt='Dog'/>
                                 <Card.ImgOverlay>
                                     <Card.Title className='d-flex position-absolute bottom-0 start-50 translate-middle-x mb-5 d-block w-100 bg-dark text-light justify-content-center opacity-75 h-25 align-items-center'>狗</Card.Title>
@@ -104,12 +108,12 @@ function QuickGuide(){
                         </LinkContainer>
                     </Col>
                     <Col sm className='justify-content-center d-flex'> 
-                        <LinkContainer to='/second' style={{ width: '18rem' , height:'20rem'}}>
+                        <LinkContainer to={basename+'second'} style={{ width: '18rem' , height:'20rem'}}>
                             <Card className='card position-relative'>
                                 <Card.Img 
                                 className='cardimg'
                                 variant="top"
-                                src={require("./img/golden-retriever-royalty-free-image-506756303-1560962726.jpg")} 
+                                src={Golden} 
                                 alt='Cat'/>
                                 <Card.ImgOverlay>
                                     <Card.Title className='d-flex position-absolute bottom-0 start-50 translate-middle-x mb-5 d-block w-100 bg-dark text-light justify-content-center opacity-75 h-25 align-items-center'>貓</Card.Title>
@@ -118,12 +122,12 @@ function QuickGuide(){
                         </LinkContainer>
                     </Col>
                     <Col sm className='justify-content-center d-flex'>
-                        <LinkContainer to='/second' style={{ width: '18rem' , height:'20rem'}}>
+                        <LinkContainer to={basename+'second'} style={{ width: '18rem' , height:'20rem'}}>
                             <Card className='card position-relative'>
                                 <Card.Img 
                                 className='cardimg'
                                 variant="top"
-                                src={require("./img/samoyed-royalty-free-image-1581005065.jpg")}
+                                src={Samoyed}
                                 alt='Bird'/>
                                 <Card.ImgOverlay>
                                     <Card.Title 
@@ -144,7 +148,7 @@ function Experience(){
     return(
         <>
             <Placeholder/>
-            <LinkContainer to='/second'>
+            <LinkContainer to={basename+'second'}>
                 <div className="d-grid gap-2 w-50 my-3 mx-auto">
                     <Button variant="dark" size="lg">
                         我來分享
