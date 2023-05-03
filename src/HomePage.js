@@ -14,9 +14,9 @@ import { LinkContainer } from 'react-router-bootstrap';
 import "./HomePage.css";
 import Placeholder from './placeholder';
 
-import Shetland from "/img/dog-shetland-sheepdog-collie-sheltie-royalty-free-image-491206081-1565123992.jpg";
-import Golden from "/img/golden-retriever-royalty-free-image-506756303-1560962726.jpg"
-import Samoyed from "/img/samoyed-royalty-free-image-1581005065.jpg"
+import Shetland from "./img/dog-shetland-sheepdog-collie-sheltie-royalty-free-image-491206081-1565123992.jpg";
+import Golden from "./img/golden-retriever-royalty-free-image-506756303-1560962726.jpg"
+import Samoyed from "./img/samoyed-royalty-free-image-1581005065.jpg"
 
 var basename="/WEBAPP/React/build/"
 function HomePage(){
