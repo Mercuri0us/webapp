@@ -2,7 +2,7 @@ import sqlite3
 
 
 def connect_to_db():
-    conn = sqlite3.connect('./E-Commerse.db')
+    conn = sqlite3.connect('./Stray Animals.db')
     return conn
 
 
