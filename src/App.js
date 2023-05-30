@@ -23,6 +23,6 @@ export default App;
 
 function Second(){
   return(
-    <Link to='/'>第二頁</Link>
+    <Link to='/'>回主頁</Link>
   );
 }
