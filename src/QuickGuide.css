@@ -1,0 +1,86 @@
+.cardimg {
+    height: 5rem;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.option {
+    font-size: 20px;
+    padding:5px;
+}
+
+.sub-label {
+    display: inline-block;
+    color: gray;
+}
+
+.submit-button {
+    padding: 40px;
+}
+
+.add-padding {
+    padding: 5px;
+}
+.add-more-padding {
+    padding: 15px;
+}
+
+.box {
+    padding-top:2%;
+    width: 500px;
+    max-width: 500px;
+}
+
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+iframe {
+    width:80%;
+    height:600px;
+}
+
+input[type=radio]:checked + label>div {
+    background-color: rgb(60, 99, 228);
+    color: rgb(231, 241,255);
+
+}
+input[type=radio] + label>div {
+    background-color: rgb(231, 241,255);
+    color: rgb(14, 99, 228);
+    width: 300px;
+    padding: 5px 0px 5px 0px;
+    transition: 500ms all;
+}
+input[type=radio]:checked + label>img {
+    transform: background-color 0.5s ease;
+}
+
+input[type=radio]:checked + label>img {
+  border: 1px solid #fff;
+  box-shadow: 0 0 3px 3px rgb(159, 194, 237);
+}
+
+/* Stuff after this is only to make things more pretty */
+input[type=radio] + label>img {
+  border: 1px dashed #444;
+  width: 150px;
+  height: 150px;
+  transition: 500ms all;
+}
+
+input[type=radio]:checked + label>img {
+  transform: 
+    rotateZ(-10deg) 
+    rotateX(10deg);
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+display: none;
+}
