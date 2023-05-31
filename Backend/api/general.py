@@ -1,8 +1,13 @@
 import sqlite3
+import sys
+import os
 
 
 def connect_to_db():
-    conn = sqlite3.connect('./Stray Animals.db')
+    basePath = sys.path[0]
+    BASE_DIR = os.path.abspath(basePath)
+    db_path = os.path.join(BASE_DIR, 'Stray Animals.db')
+    conn = sqlite3.connect(db_path)
     return conn
 
 
@@ -19,7 +24,6 @@ def get_user_by_id(id):
         user["id"] = row["id"]
         user["name"] = row["name"]
         user["email"] = row["email"]
-        user["phone"] = row["phone"]
     except Exception as e:
         print(e)
         user = {}
@@ -40,7 +44,6 @@ def get_user_by_email(email):
         user["id"] = row["id"]
         user["name"] = row["name"]
         user["email"] = row["email"]
-        user["phone"] = row["phone"]
         user["password"] = row["password"]
     except Exception as e:
         print(e)
@@ -53,8 +56,8 @@ def update_user(user, id):
     try:
         conn = connect_to_db()
         cur = conn.cursor()
-        cur.execute("UPDATE users SET name = ?, phone = ? WHERE id =?",
-                    (user["name"], user["phone"], id,))
+        cur.execute("UPDATE users SET name = ? WHERE id =?",
+                    (user["name"], id,))
         conn.commit()
         updated_user = get_user_by_id(id)
     except:
