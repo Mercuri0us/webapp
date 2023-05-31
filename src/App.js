@@ -4,6 +4,7 @@ import './App.css';
 import './index.css'
 import HomePage from './HomePage';
 import Layout from './Layout';
+import QGBird from './QGBird';
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
     <Routes>
       <Route path='WEBAPP/React/build' element={<Layout/>}>
         <Route path="homepage" element={<HomePage/>} />
-        <Route path="second" element={<Second/>} />
+        <Route path="quickguide" element={<QGBird/>} />
         <Route path='' element={<Navigate to='homepage'/>}/>
       </Route>
       <Route path='/' element={<Navigate to='/WEBAPP/React/build/homepage'/>}/>
@@ -21,8 +22,4 @@ function App() {
 
 export default App;
 
-function Second(){
-  return(
-    <Link to='/'>回主頁</Link>
-  );
-}
+

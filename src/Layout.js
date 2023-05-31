@@ -47,7 +47,7 @@ function TopNav(){
                         <LinkContainer to="">
                             <Nav.Link className='px-4 border-start border-end border-secondary'>首頁</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="">
+                        <LinkContainer to="quickguide">
                             <Nav.Link className='px-4 border-start border-end border-secondary'>快速指引</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="">
