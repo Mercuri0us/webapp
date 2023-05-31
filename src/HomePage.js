@@ -94,7 +94,7 @@ function QuickGuide(){
             <Container className='mt-5'>
                 <Row className='px-auto g-3'>
                     <Col sm className='justify-content-center d-flex'>
-                        <LinkContainer to={basename+'second'} style={{ width: '18rem' , height:'20rem'}}>
+                        <LinkContainer to={basename+'quickguide'} style={{ width: '18rem' , height:'20rem'}}>
                             <Card className='card position-relative'>
                                 <Card.Img 
                                 className='cardimg'
@@ -108,7 +108,7 @@ function QuickGuide(){
                         </LinkContainer>
                     </Col>
                     <Col sm className='justify-content-center d-flex'> 
-                        <LinkContainer to={basename+'second'} style={{ width: '18rem' , height:'20rem'}}>
+                        <LinkContainer to={basename+'quickguide'} style={{ width: '18rem' , height:'20rem'}}>
                             <Card className='card position-relative'>
                                 <Card.Img 
                                 className='cardimg'
@@ -122,7 +122,7 @@ function QuickGuide(){
                         </LinkContainer>
                     </Col>
                     <Col sm className='justify-content-center d-flex'>
-                        <LinkContainer to={basename+'second'} style={{ width: '18rem' , height:'20rem'}}>
+                        <LinkContainer to={basename+'quickguide'} style={{ width: '18rem' , height:'20rem'}}>
                             <Card className='card position-relative'>
                                 <Card.Img 
                                 className='cardimg'
@@ -148,7 +148,7 @@ function Experience(){
     return(
         <>
             <Placeholder/>
-            <LinkContainer to={basename+'second'}>
+            <LinkContainer to={basename+''}>
                 <div className="d-grid gap-2 w-50 my-3 mx-auto">
                     <Button variant="dark" size="lg">
                         我來分享
