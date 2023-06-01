@@ -8,6 +8,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Pagination from 'react-bootstrap/Pagination';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 import { LinkContainer } from 'react-router-bootstrap';
 
@@ -25,6 +26,7 @@ function HomePage(){
             <Description/>
             <QuickGuide/>
             <Experience/>
+            <Donation/>
         </div>
     );
 }
@@ -95,9 +97,9 @@ function QuickGuide(){
                 <Row className='px-auto g-3'>
                     <Col sm className='justify-content-center d-flex'>
                         <LinkContainer to={basename+'quickguide'} style={{ width: '18rem' , height:'20rem'}}>
-                            <Card className='card position-relative'>
+                            <Card className='QGcard position-relative'>
                                 <Card.Img 
-                                className='cardimg'
+                                className='cardimage'
                                 variant="top" 
                                 src={Shetland}
                                 alt='Dog'/>
@@ -109,9 +111,9 @@ function QuickGuide(){
                     </Col>
                     <Col sm className='justify-content-center d-flex'> 
                         <LinkContainer to={basename+'quickguide'} style={{ width: '18rem' , height:'20rem'}}>
-                            <Card className='card position-relative'>
+                            <Card className='QGcard position-relative'>
                                 <Card.Img 
-                                className='cardimg'
+                                className='cardimage'
                                 variant="top"
                                 src={Golden} 
                                 alt='Cat'/>
@@ -123,9 +125,9 @@ function QuickGuide(){
                     </Col>
                     <Col sm className='justify-content-center d-flex'>
                         <LinkContainer to={basename+'quickguide'} style={{ width: '18rem' , height:'20rem'}}>
-                            <Card className='card position-relative'>
+                            <Card className='QGcard position-relative'>
                                 <Card.Img 
-                                className='cardimg'
+                                className='cardimage'
                                 variant="top"
                                 src={Samoyed}
                                 alt='Bird'/>
@@ -156,31 +158,94 @@ function Experience(){
                 </div>
             </LinkContainer>
             <Placeholder/>
+            <Container>
+                <h2>緊急處置經驗</h2>
+            </Container>
+            <Placeholder/>
+            <ShowExperience/>
+            <Container>
+                <h2>其他處置經驗</h2>
+            </Container>
+            <Placeholder/>
             <ShowExperience/>
         </>
     );
 }
 
-function ShowExperience(){
+function ShowExperience(props){
     return(
-        <Container className='justify-content-center d-flex'>
-            <Pagination>
-                <Pagination.First />
-                <Pagination.Prev />
-                <Pagination.Item>{1}</Pagination.Item>
-                <Pagination.Ellipsis />
+        <div>
+            <Container className='my-5'>
+                <Row className='px-auto'>
+                    <Col sm className='justify-content-center d-flex col-md-3'>
+                        <ExperienceCard src={Shetland} title='Title1' content='content' date='date' link=''/>
+                    </Col>
+                    <Col sm className='justify-content-center d-flex col-md-3'> 
+                        <ExperienceCard src={Golden} title='Title2' content='content' date='date' link=''/>
+                    </Col>
+                    <Col sm className='justify-content-center d-flex col-md-3'>
+                        <ExperienceCard src={Samoyed} title='Title3' content='content' date='date' link=''/>
+                    </Col>
+                    <Col sm className='justify-content-center d-flex col-md-3'>
+                        <ExperienceCard src={Shetland} title='Title4' content='content' date='date' link=''/>
+                    </Col>
+                </Row>
+            </Container>
 
-                <Pagination.Item>{10}</Pagination.Item>
-                <Pagination.Item>{11}</Pagination.Item>
-                <Pagination.Item active>{12}</Pagination.Item>
-                <Pagination.Item>{13}</Pagination.Item>
-                <Pagination.Item disabled>{14}</Pagination.Item>
+            <Container className='justify-content-center d-flex my-5'>
+                <Pagination>
+                    <Pagination.First />
+                    <Pagination.Prev />
+                    <Pagination.Item>{1}</Pagination.Item>
+                    <Pagination.Ellipsis />
 
-                <Pagination.Ellipsis />
-                <Pagination.Item>{20}</Pagination.Item>
-                <Pagination.Next />
-                <Pagination.Last />
-            </Pagination>
-        </Container>
+                    <Pagination.Item>{10}</Pagination.Item>
+                    <Pagination.Item>{11}</Pagination.Item>
+                    <Pagination.Item active>{12}</Pagination.Item>
+                    <Pagination.Item>{13}</Pagination.Item>
+                    <Pagination.Item disabled>{14}</Pagination.Item>
+
+                    <Pagination.Ellipsis />
+                    <Pagination.Item>{20}</Pagination.Item>
+                    <Pagination.Next />
+                    <Pagination.Last />
+                </Pagination>
+            </Container>
+        </div>
+    );
+}
+
+function ExperienceCard(props){
+    return (
+        <Card className='expcard' style={{ width: '15rem' }}>
+          <Card.Img variant="top" src={props.src} className='cardimage'/>
+          <Card.Body>
+            <Card.Title>{props.title}</Card.Title>
+            <Card.Text>{props.content}</Card.Text>
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            <ListGroup.Item>
+                <LinkContainer to={basename + props.link}>
+                    <Button variant="outline-secondary">全文</Button>
+                </LinkContainer>
+            </ListGroup.Item>
+            <ListGroup.Item>{props.date}</ListGroup.Item>
+          </ListGroup>
+        </Card>
+      );
+}
+
+function Donation(){
+    return(
+        <Row direction="horizontal" className='dona m-5 justify-content-around border border-dark rounded shadow-sm'>
+            <Col sm={5} className='p-0'>
+                <img src={Shetland} alt='donationImage' className='donaImg'/>
+            </Col>
+            <Col sm={7} style={{minHeight: '50vh',}}>
+                <Container className='p-3'>
+                    <h1>立即捐款</h1>
+                </Container>
+            </Col>
+        </Row>
     );
 }
