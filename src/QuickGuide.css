@@ -37,6 +37,16 @@
   left: -9999px;
 }
 
+.result-container {
+    padding: 5px;
+    margin:7px;
+    background-color: rgb(214, 225, 239);
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 500px;
+    max-width: 500px;
+}
+
 iframe {
     width:80%;
     height:600px;
@@ -60,21 +70,14 @@ input[type=radio]:checked + label>img {
 
 input[type=radio]:checked + label>img {
   border: 1px solid #fff;
-  box-shadow: 0 0 3px 3px rgb(159, 194, 237);
+  box-shadow: 0 0 3px 3px rgb(60, 99, 228);
 }
 
-/* Stuff after this is only to make things more pretty */
 input[type=radio] + label>img {
-  border: 1px dashed #444;
+  border: 1px solid #444;
   width: 150px;
   height: 150px;
   transition: 500ms all;
-}
-
-input[type=radio]:checked + label>img {
-  transform: 
-    rotateZ(-10deg) 
-    rotateX(10deg);
 }
 
 .show {
@@ -84,3 +87,9 @@ input[type=radio]:checked + label>img {
 .hide {
 display: none;
 }
+
+/* input[type=radio]:checked + label>img {
+    transform: 
+        rotateZ(5deg) 
+        rotateX(5deg);
+} */

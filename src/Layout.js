@@ -39,7 +39,7 @@ function TopNav(){
         <Navbar expand="md" variant="light" bg="light" className="m-3 shadow-sm rounded sticky-top">
             <Container className='p-0 mx-5'>
                 <LinkContainer to="homepage" className='px-5 fs-3'>
-                    <Navbar.Brand>網站名稱</Navbar.Brand>
+                    <Navbar.Brand>浪浪Helper</Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className='justify-content-between'>
@@ -47,7 +47,7 @@ function TopNav(){
                         <LinkContainer to="">
                             <Nav.Link className='px-4 border-start border-end border-secondary'>首頁</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="quickguide">
+                        <LinkContainer to="second">
                             <Nav.Link className='px-4 border-start border-end border-secondary'>快速指引</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="">
@@ -63,7 +63,11 @@ function TopNav(){
 
 function Footer(){
     return(
-        <div className='w-100 text-light text-center' style={{position:'absolute', bottom:'0', height:'120px', backgroundColor:'black'}}>Footer</div>
+        <div className='w-100 text-light text-center' style={{position:'absolute', bottom:'0', height:'100px', backgroundColor:'black'}}>
+            <p>版權所有 © 2023webapp_group15</p>
+            <p>email：webapp_group15@gmail.com</p>
+            <p>phone：0936-339199</p>
+        </div>
     );
 }
 
