@@ -1,8 +1,8 @@
-import {Routes, Route, Link, Navigate} from 'react-router-dom';
+import {Routes, Route, Navigate} from 'react-router-dom';
 
 import './App.css';
 import './index.css'
-import HomePage from './HomePage';
+import HomePage, {QuickGuide} from './HomePage';
 import Layout from './Layout';
 import QGBird from './QGBird';
 import QGCat from './QGCat';
@@ -14,9 +14,12 @@ function App() {
     <Routes>
       <Route path='WEBAPP/React/build' element={<Layout/>}>
         <Route path="homepage" element={<HomePage/>} />
-        <Route path="second" element={<QGBird/>} />
-        <Route path="third" element={<QGCat/>} />
-        <Route path="fourth" element={<QGDog/>} />
+        <Route path="quickguide">
+          <Route index element={<QuickGuide/>}/>
+          <Route path="bird" element={<QGBird/>} />
+          <Route path="cat" element={<QGCat/>} />
+          <Route path="dog" element={<QGDog/>} />
+        </Route>
         <Route path='' element={<Navigate to='homepage'/>}/>
       </Route>
       <Route path='/' element={<Navigate to='/WEBAPP/React/build/homepage'/>}/>
@@ -25,10 +28,3 @@ function App() {
 }
 
 export default App;
-
-function Second(){
-  return(
-    <Link to='/'>第二頁</Link>
-  );
-}
-

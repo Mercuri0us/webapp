@@ -47,7 +47,7 @@ function TopNav(){
                         <LinkContainer to="">
                             <Nav.Link className='px-4 border-start border-end border-secondary'>首頁</Nav.Link>
                         </LinkContainer>
-                        <LinkContainer to="second">
+                        <LinkContainer to="quickguide">
                             <Nav.Link className='px-4 border-start border-end border-secondary'>快速指引</Nav.Link>
                         </LinkContainer>
                         <LinkContainer to="">
@@ -63,7 +63,7 @@ function TopNav(){
 
 function Footer(){
     return(
-        <div className='w-100 text-light text-center' style={{position:'absolute', bottom:'0', height:'100px', backgroundColor:'black'}}>
+        <div className='w-100 text-light text-center' style={{position:'absolute', bottom:'0', height:'120px', backgroundColor:'black'}}>
             <p>版權所有 © 2023webapp_group15</p>
             <p>email：webapp_group15@gmail.com</p>
             <p>phone：0936-339199</p>

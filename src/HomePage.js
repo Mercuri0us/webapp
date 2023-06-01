@@ -1,4 +1,5 @@
 import React from 'react';
+import {Outlet} from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 import Stack from 'react-bootstrap/Stack';
@@ -99,7 +100,7 @@ function QuickGuide(){
             <Container className='mt-5'>
                 <Row className='px-auto g-3'>
                     <Col sm className='justify-content-center d-flex'>
-                        <LinkContainer to={basename+'fourth'} style={{ width: '18rem' , height:'20rem'}}>
+                        <LinkContainer to={basename+'quickguide/dog'} style={{ width: '18rem' , height:'20rem'}}>
                             <Card className='card position-relative'>
                                 <Card.Img 
                                 className='cardimage'
@@ -113,7 +114,7 @@ function QuickGuide(){
                         </LinkContainer>
                     </Col>
                     <Col sm className='justify-content-center d-flex'> 
-                        <LinkContainer to={basename+'third'} style={{ width: '18rem' , height:'20rem'}}>
+                        <LinkContainer to={basename+'quickguide/cat'} style={{ width: '18rem' , height:'20rem'}}>
                             <Card className='card position-relative'>
                                 <Card.Img 
                                 className='cardimage'
@@ -127,7 +128,7 @@ function QuickGuide(){
                         </LinkContainer>
                     </Col>
                     <Col sm className='justify-content-center d-flex'>
-                        <LinkContainer to={basename+'second'} style={{ width: '18rem' , height:'20rem'}}>
+                        <LinkContainer to={basename+'quickguide/bird'} style={{ width: '18rem' , height:'20rem'}}>
                             <Card className='card position-relative'>
                                 <Card.Img 
                                 className='cardimage'
@@ -148,6 +149,7 @@ function QuickGuide(){
         </Container>
     );
 }
+export {QuickGuide};
 
 function Experience(){
     return(
