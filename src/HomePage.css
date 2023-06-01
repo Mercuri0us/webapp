@@ -13,14 +13,26 @@
     background-color:#dddddd;
 }
 
-.card:hover {
+.QGcard:hover {
     transition: .5s ease;
     opacity: 0.5;
 }
 
-.cardimg {
+.cardimage {
     height: 20rem;
     width: 100%;
     object-fit: cover;
+    overflow: hidden;
+}
+
+.dona{
+    min-height: 50vh;
+}
+
+.donaImg{
+    object-fit: cover;
+    object-position: center;
+    height: 50vh;
+    width: 100%;
     overflow: hidden;
 }

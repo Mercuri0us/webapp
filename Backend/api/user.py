@@ -13,7 +13,7 @@ class User(Resource):
             conn = connect_to_db()
             cur = conn.cursor()
             cur.execute("INSERT INTO users (name, email, password) VALUES (?, ?, ?)",
-                        (user['name'], user['email'], generate_password_hash(user['password'], method='sha256')))
+                        (user['name'], user['email'], generate_password_hash(user['password'], method='scrypt')))
             conn.commit()
             user = get_user_by_id(cur.lastrowid)
             response = make_response(jsonify({"status": 0,
@@ -24,8 +24,11 @@ class User(Resource):
             response = make_response(jsonify({"status": -1,
                                               "message": str(e), }),
                                      409)
-        except:
+        except Exception as e:
             conn.rollback()
+            response = make_response(jsonify({"status": -1,
+                                              "message": str(e), }),
+                                     500)
         finally:
             conn.close()
 
