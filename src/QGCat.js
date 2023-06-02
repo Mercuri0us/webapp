@@ -88,35 +88,11 @@ class HealthCheck extends React.Component {
         <div align="center">
             <Form className="was-validated">
                 <Accordion defaultActiveKey={['0', '1', '2', '3', '4']} alwaysOpen>
-                    <div className='box'><Accordion.Item eventKey="0">
-                        <Accordion.Header>目視外傷</Accordion.Header>
-                        <Accordion.Body> 
-                            {optionGroup("0", group0, this.props.onConditionSelect)}
-                        </Accordion.Body></Accordion.Item></div>
-
-                    <div className='box'><Accordion.Item eventKey="1">
-                        <Accordion.Header>精神狀況</Accordion.Header>
-                        <Accordion.Body> 
-                            {optionGroup("1", group1, this.props.onConditionSelect)}
-                        </Accordion.Body></Accordion.Item></div>
-
-                    <div className='box'><Accordion.Item eventKey="2">
-                        <Accordion.Header>體溫狀態</Accordion.Header>
-                        <Accordion.Body> 
-                            {optionGroup("2", group2, this.props.onConditionSelect)}
-                        </Accordion.Body></Accordion.Item></div>
-
-                    <div className='box'><Accordion.Item eventKey="3">
-                        <Accordion.Header>體態</Accordion.Header>
-                        <Accordion.Body> 
-                            {optionGroup("3", group3, this.props.onConditionSelect)}
-                        </Accordion.Body></Accordion.Item></div>
-
-                    <div className='box'><Accordion.Item eventKey="4">
-                        <Accordion.Header>其他</Accordion.Header>
-                        <Accordion.Body> 
-                            {optionGroup("4", group4, this.props.onConditionSelect)}
-                        </Accordion.Body></Accordion.Item></div>
+                    {optionGroup("目視外傷", "0", group0, this.props.onConditionSelect)}
+                    {optionGroup("精神狀況", "1", group1, this.props.onConditionSelect)}
+                    {optionGroup("體溫狀態", "2", group2, this.props.onConditionSelect)}
+                    {optionGroup("體態", "3", group3, this.props.onConditionSelect)}
+                    {optionGroup("其他", "4", group4, this.props.onConditionSelect)}
                 </Accordion> 
             </Form>
             <div className="submit-button">
@@ -136,7 +112,6 @@ class HealthCheck extends React.Component {
 
 class Result extends React.Component {   
     render() {
-        const result = this.result;
         if (this.props.activeSection === "result") {
             return (
                 <div align="center">
