@@ -3,7 +3,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import { Title, imgOption, optionGroup } from './QuickGuide';
+import { Title, imgOption, optionGroup, options } from './QuickGuide';
 import "./QuickGuide.css";
 
 import Pigeon from "./img/pigeons.jpg";
@@ -104,35 +104,11 @@ class HealthCheck extends React.Component {
         <div align="center">
             <Form className="was-validated">
                 <Accordion defaultActiveKey={['0', '1', '2', '3','4']} alwaysOpen>
-                    <div className='box'><Accordion.Item eventKey="0">
-                        <Accordion.Header>目視外傷</Accordion.Header>
-                        <Accordion.Body> 
-                            {optionGroup("0", group0, this.props.onConditionSelect)}
-                        </Accordion.Body></Accordion.Item></div>
-
-                    <div className='box'><Accordion.Item eventKey="1">
-                        <Accordion.Header>精神狀況</Accordion.Header>
-                        <Accordion.Body> 
-                            {optionGroup("1", group1, this.props.onConditionSelect)}
-                        </Accordion.Body></Accordion.Item></div>
-
-                    <div className='box'><Accordion.Item eventKey="2">
-                        <Accordion.Header>體溫狀態</Accordion.Header>
-                        <Accordion.Body> 
-                            {optionGroup("2", group2, this.props.onConditionSelect)}
-                        </Accordion.Body></Accordion.Item></div>
-
-                    <div className='box'><Accordion.Item eventKey="3">
-                        <Accordion.Header>肢體外貌</Accordion.Header>
-                        <Accordion.Body> 
-                            {optionGroup("3", group3, this.props.onConditionSelect)}
-                        </Accordion.Body></Accordion.Item></div>
-
-                    <div className='box'><Accordion.Item eventKey="4">
-                        <Accordion.Header>羽毛狀態</Accordion.Header>
-                        <Accordion.Body> 
-                            {optionGroup("4", group4, this.props.onConditionSelect)}
-                        </Accordion.Body></Accordion.Item></div>
+                    {optionGroup("目視外傷", "0", group0, this.props.onConditionSelect)}
+                    {optionGroup("精神狀況", "1", group1, this.props.onConditionSelect)}
+                    {optionGroup("體溫狀態", "2", group2, this.props.onConditionSelect)}
+                    {optionGroup("肢體外貌", "3", group3, this.props.onConditionSelect)}
+                    {optionGroup("羽毛狀態", "4", group4, this.props.onConditionSelect)}
                 </Accordion> 
             </Form>
             <div className="submit-button">
@@ -166,9 +142,9 @@ class EnvironmentCheck extends React.Component {
                 <div className='result-container' align="center">
                     <h2>這隻鳥目前狀態健康!</h2>
                     <h4>請問您可以找到牠的巢穴嗎?</h4>
-                    {optionGroup("nest", TF0, this.props.onSelect)}
+                    {options("nest", TF0, this.props.onSelect)}
                     <h4>牠可以自己回到牠的巢穴嗎?</h4>
-                    {optionGroup("canReturn", TF1, this.props.onSelect)}
+                    {options("canReturn", TF1, this.props.onSelect)}
                     <Button type="submit" variant="primary" size="lg" onClick={this.props.onSubmit}>提交</Button> 
                     <h4>{this.props.instruction}</h4>
                 </div></div>
@@ -179,7 +155,6 @@ class EnvironmentCheck extends React.Component {
 
 class Result extends React.Component {   
     render() {
-        const result = this.result;
         if (this.props.activeSection === "result") {
             return (
                 <div align="center">
@@ -224,8 +199,7 @@ class Bird extends React.Component {
             completion: false,
 
             nest: null,
-            canReturn: null,
-            instruction: ""
+            canReturn: null
         };
 
         this.handleNext = this.handleNext.bind(this);
@@ -349,14 +323,15 @@ class Bird extends React.Component {
     }
     handleNestSubmit() {
         if(this.state.nest!==null && this.state.canReturn!==null){
+            this.setState({activeSection: "result"})
             if(this.state.nest===true && this.state.canReturn===true){
-                this.setState({instruction: healthyNestResult})
+                this.setState({result: healthyNest_cantbackResult})
+
             }
             else if(this.state.nest===true && this.state.canReturn===false){
-                this.setState({instruction: healthyNest_cantbackResult})
+                this.setState({result: healthyNest_cantbackResult})
             }
             else {
-                this.setState({activeSection: "result"})
                 this.setState({result: healthyNoNestResult})
             }
         }
